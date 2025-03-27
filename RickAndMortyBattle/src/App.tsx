@@ -1,8 +1,20 @@
+import { ThemeProvider } from "styled-components";
+import { defaultTheme } from "./styles/themes/defaultTheme";
+import { GlobalStyle } from "./styles/global";
+import { Router } from "./Router";
+import { BrowserRouter } from "react-router-dom";
+
 function App() {
 
   return (
-    <h1>Rick and Morty Battle</h1>
+    <ThemeProvider theme={defaultTheme}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+
+      <GlobalStyle />
+    </ThemeProvider>
   )
 }
 
-export default App
+export default App;
