@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: ${props => props.theme["blue-800"]};
-        color: ${props => props.theme["white"]};
+        color: ${props => props.theme.white};
         font-family: "Reem Kufi Fun", sans-serif;
         padding: 1rem 3rem;
     }
