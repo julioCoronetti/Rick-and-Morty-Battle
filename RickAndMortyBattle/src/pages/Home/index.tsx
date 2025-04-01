@@ -1,14 +1,32 @@
+import { Card } from "./components/Card"
+import { ButtonPicles, CardsContainer, HomeContainer } from "./styles"
+
 import logo from "../../assets/logo.svg"
-import { Card } from "./components"
-import { HomeContainer } from "./styles"
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
+    const navigate = useNavigate();
+
+    const goToBattlePage = () => {
+        navigate("/battle");
+    }
+
     return (
         <HomeContainer>
-            <img src={logo} />
-            <p>Entre em uma batalha de turnos com seus personagens favoritos!</p>
+            <div>
+                <img src={logo} />
+                <p>Enter a turn-based battle with your favorite characters!</p>
+            </div>
 
-            <Card />
+            <ButtonPicles onClick={goToBattlePage}>
+                <p>BATTLE!</p>
+            </ButtonPicles>
+
+            <CardsContainer>
+                <Card />
+                <Card />
+                <Card />
+            </CardsContainer>
         </HomeContainer>
     )
 }

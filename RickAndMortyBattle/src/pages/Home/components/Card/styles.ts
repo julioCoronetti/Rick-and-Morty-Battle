@@ -7,6 +7,7 @@ export const CardContainer = styled.div`
     border-radius: 6px;
     border: 3px solid ${props => props.theme["blue-500"]};
     outline: 3px solid ${props => props.theme["gray-300"]};
+    box-shadow: -5px 5px 15px #00000050;
 
     display: flex;
     flex-direction: column;
