@@ -1,5 +1,11 @@
+import logo from "../../assets/logo.svg"
+import { HomeContainer } from "./styles"
+
 export const Home = () => {
     return (
-        <h1>Home</h1>
+        <HomeContainer>
+            <img src={logo} />
+            <p>Entre em uma batalha de turnos com seus personagens favoritos!</p>
+        </HomeContainer>
     )
 }

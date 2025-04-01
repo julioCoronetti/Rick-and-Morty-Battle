@@ -8,7 +8,10 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        width: 100%;
+        height: 100vh;
         background-color: ${props => props.theme["blue-800"]};
+        background-image: url('/src/assets/background.svg');
         color: ${props => props.theme.white};
         font-family: "Reem Kufi Fun", sans-serif;
         padding: 1rem 3rem;
