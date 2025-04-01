@@ -1,7 +1,11 @@
 import { FooterContainer } from "./styles"
 
+import spaceShip from "/src/assets/spaceShip.svg"
+
 export const Footer = () => {
   return (
-    <FooterContainer />
+    <FooterContainer>
+      <img src={spaceShip} />
+    </FooterContainer>
   )
 }

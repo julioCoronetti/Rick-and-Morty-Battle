@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.main`
     width: 100%;
-    height: 170vh;
+    height: 180vh;
     
     display: flex;
     flex-direction: column;

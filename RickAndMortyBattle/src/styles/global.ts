@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
         height: 100vh;
         background-color: ${props => props.theme["blue-800"]};
         background-image: url('/src/assets/background.svg');
+        background-attachment: fixed;
         color: ${props => props.theme.white};
         font-family: "Reem Kufi Fun", sans-serif;
         padding: 1rem 3rem;
