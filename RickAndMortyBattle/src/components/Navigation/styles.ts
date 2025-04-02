@@ -1,12 +1,26 @@
 import styled from "styled-components";
 
-export const NavigationContainer = styled.nav`
-    width: 100%;
+interface NavigationProps {
+    scrolled?: boolean;
+}
+
+export const NavigationContainer = styled.nav<NavigationProps>`
+    position: fixed;
+    z-index: 999;
+
+    width: ${props => props.scrolled ? "90%" : "100%"};
+    background-color: ${props => props.scrolled ? props.theme["blue-500"] : "transparent"};
+
+    margin-top: 1rem;
+    border-radius: 1rem;
     height: 10vh;
+    padding: ${props => props.scrolled ? "1rem" : "1rem 3rem"};
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    transition: 0.5s ease-in-out;
     
     > ul {
         list-style: none;

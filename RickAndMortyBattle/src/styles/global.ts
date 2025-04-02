@@ -15,6 +15,5 @@ export const GlobalStyle = createGlobalStyle`
         background-attachment: fixed;
         color: ${props => props.theme.white};
         font-family: "Reem Kufi Fun", sans-serif;
-        padding: 1rem 3rem;
     }
 `;

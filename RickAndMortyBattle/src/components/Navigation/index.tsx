@@ -1,9 +1,21 @@
 import { NavLink } from "react-router-dom";
 import { LinkBattle, LinksContainer, NavigationContainer } from "./styles";
+import { useEffect, useState } from "react";
 
 export const Navigation = () => {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [])
+
     return (
-        <NavigationContainer>
+        <NavigationContainer scrolled={scrolled}>
             <ul>
                 <LinksContainer>
                     <NavLink to="/Favorites">Favorites</NavLink>
