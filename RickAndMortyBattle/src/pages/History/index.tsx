@@ -1,10 +1,9 @@
-import { HomeNavigation } from "../../components/HomeNavigation"
+import { HomeButton } from "../../components/HomeButton"
 
 export const History = () => {
     return (
         <>
-            <h1>History</h1>
-            <HomeNavigation />
+            <HomeButton />
         </>
     )
 }

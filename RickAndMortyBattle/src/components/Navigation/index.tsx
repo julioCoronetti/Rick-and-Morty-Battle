@@ -12,7 +12,7 @@ export const Navigation = () => {
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [])
+    }, []);
 
     return (
         <NavigationContainer scrolled={scrolled}>
@@ -29,4 +29,4 @@ export const Navigation = () => {
             </ul>
         </NavigationContainer>
     );
-}
+};

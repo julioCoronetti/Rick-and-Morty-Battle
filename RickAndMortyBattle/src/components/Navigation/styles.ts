@@ -4,7 +4,10 @@ interface NavigationProps {
     scrolled?: boolean;
 }
 
-export const NavigationContainer = styled.nav<NavigationProps>`
+export const NavigationContainer = styled.nav.withConfig(
+    {
+        shouldForwardProp: (prop) => prop !== "scrolled",
+    }) <NavigationProps>`
     position: fixed;
     z-index: 999;
 

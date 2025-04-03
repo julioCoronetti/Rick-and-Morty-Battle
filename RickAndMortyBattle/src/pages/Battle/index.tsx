@@ -1,10 +1,10 @@
-import { HomeNavigation } from "../../components/HomeNavigation"
+import { HomeButton } from "../../components/HomeButton"
+import { BattleContainer } from "./styles"
 
 export const Battle = () => {
     return (
-        <>
-            <h1>Battle</h1>
-            <HomeNavigation />
-        </>
+        <BattleContainer>
+            <HomeButton />
+        </BattleContainer>
     )
 }

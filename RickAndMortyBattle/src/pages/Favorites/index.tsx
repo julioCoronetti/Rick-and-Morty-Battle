@@ -1,10 +1,9 @@
-import { HomeNavigation } from "../../components/HomeNavigation"
+import { HomeButton } from "../../components/HomeButton"
 
 export const Favorites = () => {
     return (
         <>
-            <h1>Favorites</h1>
-            <HomeNavigation />
+            <HomeButton />
         </>
     )
 }

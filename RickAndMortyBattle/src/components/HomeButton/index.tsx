@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { HomeNavigationContainer } from "./styles";
 import { House } from "phosphor-react";
 
-export const HomeNavigation = () => {
+export const HomeButton  = () => {
     const navigate = useNavigate();
 
     const goToHomePage = () => {
