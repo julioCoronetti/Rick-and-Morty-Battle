@@ -10,6 +10,7 @@ export const NavigationContainer = styled.nav<NavigationProps>`
 
     width: ${props => props.scrolled ? "90%" : "100%"};
     background-color: ${props => props.scrolled ? props.theme["blue-500"] : "transparent"};
+    box-shadow: ${props => props.scrolled ? "5px 5px 5px #00000050" : "none"};
 
     margin-top: 1rem;
     border-radius: 1rem;

@@ -2,18 +2,18 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.main`
     width: 100%;
-    height: 180vh;
     
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 5rem;
     align-items: center;
+    justify-content: space-between;
 
     > div {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 20vh;
 
         p {
             font-size: 1.2rem;

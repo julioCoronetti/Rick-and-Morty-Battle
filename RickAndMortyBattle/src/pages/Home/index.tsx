@@ -3,6 +3,7 @@ import { ButtonPicles, CardsContainer, HomeContainer } from "./styles"
 
 import logo from "../../assets/logo.svg"
 import { useNavigate } from "react-router-dom";
+// import { Footer } from "../../components/Footer";
 
 export const Home = () => {
     const navigate = useNavigate();
@@ -27,6 +28,8 @@ export const Home = () => {
                 <Card />
                 <Card />
             </CardsContainer>
+
+            {/* <Footer /> */}
         </HomeContainer>
     )
 }
