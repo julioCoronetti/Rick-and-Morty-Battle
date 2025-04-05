@@ -9,7 +9,7 @@ export const FooterContainer = styled.footer`
     background-color: ${props => props.theme["gray-300"]};
 
     img {
-        margin-top: -3%;
+        margin-top: -2%;
         margin-left: -20%;
         width: 80%;
         height: 80%;

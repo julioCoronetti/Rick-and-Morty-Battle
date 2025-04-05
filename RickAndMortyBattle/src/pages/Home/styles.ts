@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.main`
     width: 100%;
+    height: 250vh;
     
     display: flex;
     flex-direction: column;
@@ -19,38 +20,25 @@ export const HomeContainer = styled.main`
             font-size: 1.2rem;
         }
     }
-
-    main {
-        
-    }
 `;
 
-export const ButtonPicles = styled.button`
-    width: 237px;
-    height: 60px;
-    background: url('/src/assets/buttonPicle.svg') no-repeat center;
-    background-size: cover;
-    border-radius: 10px;
-    border: 0;
+export const BattleButton = styled.button`
+    background-color: ${props => props.theme["yellow"]};
+    border: 5px solid transparent;
+    outline: 1px solid ${props => props.theme.white};
+    background-clip: padding-box;
+    font-size: 2rem;
+    font-family: "Luckiest Guy", sans-serif;
+    padding: 0.5rem 2rem;
+    color: ${props => props.theme["blue-800"]};
     cursor: pointer;
-    box-shadow: 0 0 15px #4D8024,0 0 60px #4D8024;
+    border-radius: 10px;
+    margin-top: 5rem;
     transition: 0.3s ease-in-out;
 
-    display: flex;
-    align-items: center;
-    
-    margin-bottom: 5rem;
-    
-    p {
-        font-family: "Luckiest Guy", sans-serif;
-        font-size: 1.5rem;
-        margin-left: 20%;
-        color: ${props => props.theme.white}
-    }
-
     &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 30px #4D8024,0 0 60px #4D8024;
+        background-color: ${props => props.theme.white};
+        
     }
 `;
 
@@ -76,4 +64,3 @@ export const CardsContainer = styled.section`
         z-index: 3;
     }
 `;
-

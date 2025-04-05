@@ -18,8 +18,8 @@ export const Navigation = () => {
         <NavigationContainer scrolled={scrolled}>
             <ul>
                 <LinksContainer>
+                    <NavLink to="/Generate">Generate</NavLink>
                     <NavLink to="/Favorites">Favorites</NavLink>
-                    <NavLink to="/Teams">Teams</NavLink>
                     <NavLink to="/History">History</NavLink>
                 </LinksContainer>
 
