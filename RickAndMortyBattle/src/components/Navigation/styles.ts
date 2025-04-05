@@ -41,6 +41,16 @@ export const LinksContainer = styled.li`
         text-decoration: none;
         color: ${props => props.theme.white};
         font-family: "Reem Kufi Fun", comic sans MS;
+
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            color: ${props => props.theme["yellow"]};
+            text-shadow: 0 0 10px ${props => props.theme["yellow"]};
+        }
     }
 `;
 
