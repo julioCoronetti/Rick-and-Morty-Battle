@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
 import { HomeButton } from "../../components/HomeButton"
 import { BattleContainer } from "./styles"
-
-interface Character {
-    id: number;
-    name: string;
-    image: string;
-}
+import { Character } from "../../contexts/UserProvider";
 
 export const Battle = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true);

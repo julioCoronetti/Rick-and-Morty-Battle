@@ -3,12 +3,13 @@ import { BattleButton, CardsContainer, HomeContainer } from "./styles"
 import logo from "../../assets/logo.svg"
 import { useNavigate } from "react-router-dom";
 import { Footer } from "./components/Footer";
+import { useUser } from "../../contexts/UserProvider";
 
 export const Home = () => {
     const navigate = useNavigate();
+    const { characters } = useUser();
 
     const goToBattlePage = () => {
-        const characters = JSON.parse(localStorage.getItem("myCharacters") || "[]");
 
         if (characters.length > 0) {
             navigate("/battle");
