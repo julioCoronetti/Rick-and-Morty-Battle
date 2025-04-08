@@ -6,7 +6,7 @@ import { Character } from "../../contexts/UserProvider";
 export const Battle = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [characters, setCharacters] = useState<Character[]>([]);
-    const randomNumber = Math.floor(Math.random() * 10) + 1;
+    const randomNumber = Math.floor(Math.random() * 3) + 1;
 
     const fetchData = async () => {
         setIsLoading(true);

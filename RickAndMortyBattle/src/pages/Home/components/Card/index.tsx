@@ -1,11 +1,16 @@
 import { CardContainer, CardHeader, CardImage, StatusContainer } from "./styles"
 
-export const Card = () => {
+interface CardProps {
+    image: string;
+    name: string;
+}
+
+export const Card = ({ image, name }: CardProps) => {
     return (
         <CardContainer>
             <CardHeader>
-                <CardImage />
-                <p>Rick Sanchez</p>
+                <CardImage src={image} />
+                <p>{name}</p>
             </CardHeader>
 
             <StatusContainer>

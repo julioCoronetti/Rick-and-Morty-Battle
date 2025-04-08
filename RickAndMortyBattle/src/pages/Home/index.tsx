@@ -30,9 +30,18 @@ export const Home = () => {
             </div>
 
             <CardsContainer>
-                <Card />
-                <Card />
-                <Card />
+                <Card
+                    image="src/assets/characters/summer.png"
+                    name="Summer Smith"
+                />
+                <Card
+                    image="src/assets/characters/rick.png"
+                    name="Rick Sanchez"
+                />
+                <Card
+                    image="src/assets/characters/morty.png"
+                    name="Morty Smith"
+                />
             </CardsContainer>
 
             <Footer />

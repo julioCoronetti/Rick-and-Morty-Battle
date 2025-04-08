@@ -28,11 +28,11 @@ export const CardHeader = styled.div`
     }
 `;
 
-export const CardImage = styled.div`
+export const CardImage = styled.img`
     width: 85px;
     height: 85px;
     border-radius: 100%;
-    background-color: white;
+    background-size: cover;
     border: 3px solid ${props => props.theme["blue-500"]};
 `;
 
