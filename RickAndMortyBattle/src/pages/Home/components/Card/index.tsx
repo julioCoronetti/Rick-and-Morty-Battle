@@ -1,4 +1,4 @@
-import { CardContainer, CardHeader, CardImage, StatusContainer } from "./styles"
+import { CardContainer, CardHeader, CardImage, CardsStatus, CardStatus } from "./styles"
 
 interface CardProps {
     image: string;
@@ -9,26 +9,28 @@ export const Card = ({ image, name }: CardProps) => {
     return (
         <CardContainer>
             <CardHeader>
-                <CardImage src={image} />
-                <p>{name}</p>
+                <h1>{name}</h1>
+                <hr />
             </CardHeader>
 
-            <StatusContainer>
-                <li>
-                    <p>Ataque: </p>
-                    <div>99</div>
-                </li>
+            <CardImage src={image} />
 
-                <li>
-                    <p>Defesa: </p>
+            <CardsStatus>
+                <CardStatus>
                     <div>99</div>
-                </li>
+                    <div>Ataque</div>
+                </CardStatus>
 
-                <li>
-                    <p>Vida</p>
+                <CardStatus>
                     <div>99</div>
-                </li>
-            </StatusContainer>
+                    <div>Defesa</div>
+                </CardStatus>
+
+                <CardStatus>
+                    <div>99</div>
+                    <div>Vida</div>
+                </CardStatus>
+            </CardsStatus>
         </CardContainer>
     )
 }
