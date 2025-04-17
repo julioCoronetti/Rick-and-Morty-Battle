@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { HomeButton } from "../../components/HomeButton"
 import { BattleContainer } from "./styles"
 import { useUser } from "../../contexts/UserProvider";
@@ -10,8 +10,7 @@ export const Battle = () => {
 
     useEffect(() => {
         if (characters.length === 0) {
-            alert('Você precisa montar seu time antes de iniciar a batalha!');
-            navigate('/teams'); // ou a página que faz sentido pro seu fluxo
+            navigate('/generate');
         }
     }, [characters, navigate]);
 
