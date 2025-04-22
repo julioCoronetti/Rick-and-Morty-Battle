@@ -1,4 +1,4 @@
-import { Card } from "./components/Card"
+import { Card } from "../../components/Card";
 import { BattleButton, CardsContainer, HomeContainer } from "./styles"
 import logo from "../../assets/logo.svg"
 import { useNavigate } from "react-router-dom";
@@ -31,7 +31,7 @@ export const Home = () => {
 
             <CardsContainer>
                 <Card
-                    image="src/assets/characters/summer.png"
+                    image="src/assets/characters/summer.webp"
                     name="Summer Smith"
                 />
                 <Card
@@ -39,7 +39,7 @@ export const Home = () => {
                     name="Rick Sanchez"
                 />
                 <Card
-                    image="src/assets/characters/morty.png"
+                    image="src/assets/characters/morty.webp"
                     name="Morty Smith"
                 />
             </CardsContainer>

@@ -2,22 +2,30 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
     width: 210px;
-    height: 300px;
+    height: 310px;
     background-color: ${props => props.theme["blue-800"]};
     border-radius: 10px;
     outline: 10px solid ${props => props.theme.white};
     box-shadow: 0 5px 25px #000000;
+    padding: 1rem 0;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
+    justify-content: space-between;
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
 `;
 
 export const CardHeader = styled.div`
     width: 150px;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     position: relative;
 
     hr {
@@ -32,6 +40,7 @@ export const CardImage = styled.img`
     height: 150px;
     border: 2px solid ${props => props.theme.white};
     border-radius: 10px;
+    object-fit: cover;
 `;
 
 export const CardsStatus = styled.div`
