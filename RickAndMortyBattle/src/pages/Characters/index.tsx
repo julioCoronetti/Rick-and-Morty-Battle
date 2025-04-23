@@ -1,6 +1,6 @@
 import { HomeButton } from "../../components/HomeButton"
 
-export const Favorites = () => {
+export const Characters = () => {
     return (
         <>
             <HomeButton />

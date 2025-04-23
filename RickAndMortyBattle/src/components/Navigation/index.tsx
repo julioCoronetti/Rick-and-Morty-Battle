@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { LinkBattle, LinksContainer, NavigationContainer } from "./styles";
 import { useEffect, useState } from "react";
-import { ClockCounterClockwise, Flask, Star } from "phosphor-react";
+import { ClockCounterClockwise, Flask, Person } from "phosphor-react";
 
 export const Navigation = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -20,7 +20,7 @@ export const Navigation = () => {
             <ul>
                 <LinksContainer>
                     <NavLink to="/Generate">Generate <Flask size={20} /> </NavLink>
-                    <NavLink to="/Favorites">Favorites <Star size={20} /> </NavLink>
+                    <NavLink to="/Characters">Characters <Person size={20} /> </NavLink>
                     <NavLink to="/History">History <ClockCounterClockwise size={20} /> </NavLink>
                 </LinksContainer>
 
