@@ -25,13 +25,20 @@ export const CardContainer = styled.div`
 
 export const CardHeader = styled.div`
     width: 150px;
-    font-size: 0.65rem;
+    font-size: 1rem;
     position: relative;
 
     hr {
         background-color: white;
         border: 1px solid ${props => props.theme.white};
         border-radius: 2rem;
+    }
+
+    p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
     }
 `;
 

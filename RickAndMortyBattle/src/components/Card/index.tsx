@@ -16,7 +16,7 @@ export const Card = ({ image, name }: CardProps) => {
         <CardContainer>
             <div>
                 <CardHeader>
-                    <h1>{name}</h1>
+                    <p>{name}</p>
                     <hr />
                 </CardHeader>
 
