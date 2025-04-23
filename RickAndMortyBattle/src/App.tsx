@@ -4,6 +4,7 @@ import { GlobalStyle } from "./styles/global";
 import { Router } from "./Router";
 import { BrowserRouter } from "react-router-dom";
 import { useEffect } from "react";
+import { UserProvider } from "./contexts/UserProvider";
 
 function App() {
   useEffect(() => {
@@ -17,12 +18,13 @@ function App() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
+      <UserProvider>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
 
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
-
-      <GlobalStyle />
+        <GlobalStyle />
+      </UserProvider>
     </ThemeProvider>
   )
 }
