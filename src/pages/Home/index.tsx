@@ -33,14 +33,26 @@ export const Home = () => {
                 <Card
                     image="src/assets/characters/summer.webp"
                     name="Summer Smith"
+                    attack={13}
+                    defense={25}
+                    life={16}
+                    specialAttribute="attack"
                 />
                 <Card
                     image="src/assets/characters/rick.png"
                     name="Rick Sanchez"
+                    attack={26}
+                    defense={12}
+                    life={11}
+                    specialAttribute="attack"
                 />
                 <Card
                     image="src/assets/characters/morty.webp"
                     name="Morty Smith"
+                    attack={11}
+                    defense={15}
+                    life={27}
+                    specialAttribute="attack"
                 />
             </CardsContainer>
 

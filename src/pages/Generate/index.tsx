@@ -1,63 +1,19 @@
 import { Card } from "../../components/Card";
 import { HomeButton } from "../../components/HomeButton";
 import { ButtonGenerate, GenerateContainer } from "./styles";
-import { getRandomCharacter } from "../../services/axios";
-import { useState } from "react";
-import { Character, useUser } from "../../contexts/UserProvider";
-
-const randomSpecialAttribute = (): "attack" | "defense" | "life" => {
-	const attributes = ["attack", "defense", "life"] as const;
-	const random = Math.floor(Math.random() * 3);
-	return attributes[random];
-};
-
-const randomAttributes = (specialAttribute: "attack" | "defense" | "life") => {
-	const getRandomValue = (min: number, max: number) =>
-		Math.floor(Math.random() * (max - min + 1)) + min;
-
-	return {
-		attack:
-			specialAttribute === "attack"
-				? getRandomValue(20, 30)
-				: getRandomValue(10, 20),
-		defense:
-			specialAttribute === "defense"
-				? getRandomValue(20, 30)
-				: getRandomValue(10, 20),
-		life:
-			specialAttribute === "life"
-				? getRandomValue(20, 30)
-				: getRandomValue(10, 20),
-		specialAttribute,
-	};
-};
-
-const specialAttr = randomSpecialAttribute();
-const characterStats = randomAttributes(specialAttr);
+import { useUser } from "../../contexts/UserProvider";
+import { useCharacter } from "../../contexts/CharacterProvider";
 
 export const Generate = () => {
-	const [character, setCharacter] = useState<Character>({
-		id: 0,
-		image: "",
-		name: "",
-		specialAttribute: "attack",
-		attack: "??",
-		defense: "??",
-		life: "??",
-	});
+	const { userCharacter, setUserCharacter, generateCharacter } = useCharacter();
 	const { generationKey, useKey, addCharacter } = useUser();
 
 	const handleGenerate = async () => {
 		if (generationKey > 0) {
-			const data = await getRandomCharacter();
-			const newCharacter = {
-				id: data.id,
-				image: data.image,
-				name: data.name,
-				...characterStats,
-			};
-			setCharacter(newCharacter);
+			const newCharacter = await generateCharacter();
+			setUserCharacter(newCharacter);
 			addCharacter(newCharacter);
+			setUserCharacter(newCharacter);
 			useKey();
 		} else {
 			alert("Você não tem chaves suficientes para gerar um personagem!");
@@ -67,12 +23,16 @@ export const Generate = () => {
 	return (
 		<GenerateContainer>
 			<Card
-				image={character.image}
-				name={character.name}
-				attack={character.attack}
-				defense={character.defense}
-				life={character.life}
-				specialAttribute={character.specialAttribute}
+				image={userCharacter?.image || ""}
+				name={userCharacter?.name || ""}
+				attack={
+					userCharacter?.attack === 0 ? "??" : (userCharacter?.attack ?? "??")
+				}
+				defense={
+					userCharacter?.defense === 0 ? "??" : (userCharacter?.defense ?? "??")
+				}
+				life={userCharacter?.life === 0 ? "??" : (userCharacter?.life ?? "??")}
+				specialAttribute={userCharacter?.specialAttribute || "attack"}
 			/>
 			<ButtonGenerate onClick={handleGenerate}>Gerar</ButtonGenerate>
 			<HomeButton />

@@ -5,28 +5,31 @@ import { Router } from "./Router";
 import { BrowserRouter } from "react-router-dom";
 import { useEffect } from "react";
 import { UserProvider } from "./contexts/UserProvider";
+import { CharacterProvider } from "./contexts/CharacterProvider";
 
 function App() {
-  useEffect(() => {
-    const hasCharacters = localStorage.getItem("myCharacters");
-    const hasKey = localStorage.getItem("generationKey");
+	useEffect(() => {
+		const hasCharacters = localStorage.getItem("myCharacters");
+		const hasKey = localStorage.getItem("generationKey");
 
-    if (!hasCharacters && !hasKey) {
-      localStorage.setItem("generationKey", "1");
-    }
-  }, []);
+		if (!hasCharacters && !hasKey) {
+			localStorage.setItem("generationKey", "1");
+		}
+	}, []);
 
-  return (
-    <ThemeProvider theme={defaultTheme}>
-      <UserProvider>
-        <BrowserRouter>
-          <Router />
-        </BrowserRouter>
+	return (
+		<ThemeProvider theme={defaultTheme}>
+			<UserProvider>
+				<CharacterProvider>
+					<BrowserRouter>
+						<Router />
+					</BrowserRouter>
 
-        <GlobalStyle />
-      </UserProvider>
-    </ThemeProvider>
-  )
+					<GlobalStyle />
+				</CharacterProvider>
+			</UserProvider>
+		</ThemeProvider>
+	);
 }
 
 export default App;

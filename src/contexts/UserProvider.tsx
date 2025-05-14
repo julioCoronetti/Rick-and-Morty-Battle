@@ -10,10 +10,10 @@ export interface Character {
 	id: number;
 	name: string;
 	image: string;
-	specialAttribute: "attack" | "defense" | "life";
 	attack: number | "??";
 	defense: number | "??";
 	life: number | "??";
+	specialAttribute: "attack" | "defense" | "life";
 }
 
 type UserContextType = {
