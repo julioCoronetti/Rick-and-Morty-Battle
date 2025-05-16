@@ -10,8 +10,9 @@ export const Characters = () => {
 		<>
 			<CharactersContainer>
 				<h2>My Characters</h2>
-				{characters.map((character, index) => (
-					<CharactersShelf key={index}>
+				{characters.length > 0 && (
+					<CharactersShelf>
+					{characters.map((character) => (
 						<Card
 							key={character.id}
 							image={character.image}
@@ -21,8 +22,9 @@ export const Characters = () => {
 							life={character.life}
 							specialAttribute={character.specialAttribute}
 						/>
-					</CharactersShelf>
-				))}
+					))}
+				</CharactersShelf>
+				)}
 			</CharactersContainer>
 			<HomeButton />
 		</>
