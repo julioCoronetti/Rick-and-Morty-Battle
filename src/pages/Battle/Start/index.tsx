@@ -13,10 +13,10 @@ export const StartBattle = () => {
 
 	if (!battle) {
 		return (
-			<div>
+			<StartBattleContainer>
 				<p>Batalha não encontrada.</p>
 				<HomeButton />
-			</div>
+			</StartBattleContainer>
 		);
 	}
 
