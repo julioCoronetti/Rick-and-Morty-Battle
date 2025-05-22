@@ -5,16 +5,7 @@ import {
 	useState,
 	ReactNode,
 } from "react";
-
-export interface Character {
-	id: number;
-	name: string;
-	image: string;
-	attack: number | "??";
-	defense: number | "??";
-	life: number | "??";
-	specialAttribute: "attack" | "defense" | "life";
-}
+import { Character } from "../types/Character";
 
 type UserContextType = {
 	characters: Character[];

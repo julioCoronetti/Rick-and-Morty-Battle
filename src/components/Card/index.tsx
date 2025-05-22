@@ -13,6 +13,7 @@ interface CardProps {
 	defense: number | "??";
 	life: number | "??";
 	specialAttribute: "attack" | "defense" | "life";
+	onClick?: () => void;
 }
 
 export const Card = ({
@@ -22,6 +23,7 @@ export const Card = ({
 	defense,
 	life,
 	//specialAttribute,
+	onClick,
 }: CardProps) => {
 	if (name === "" || image === "") {
 		name = "unknown";
@@ -29,7 +31,10 @@ export const Card = ({
 	}
 
 	return (
-		<CardContainer>
+		<CardContainer
+			onClick={onClick}
+			style={{ cursor: onClick ? "pointer" : "default" }}
+		>
 			<div>
 				<CardHeader>
 					<p>{name}</p>

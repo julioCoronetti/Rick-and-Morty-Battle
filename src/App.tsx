@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { useEffect } from "react";
 import { UserProvider } from "./contexts/UserProvider";
 import { CharacterProvider } from "./contexts/CharacterProvider";
+import { BattleHistoryProvider } from "./contexts/BattleHistoryProvider";
 
 function App() {
 	useEffect(() => {
@@ -19,15 +20,17 @@ function App() {
 
 	return (
 		<ThemeProvider theme={defaultTheme}>
-			<UserProvider>
-				<CharacterProvider>
-					<BrowserRouter>
-						<Router />
-					</BrowserRouter>
+			<BattleHistoryProvider>
+				<UserProvider>
+					<CharacterProvider>
+						<BrowserRouter>
+							<Router />
+						</BrowserRouter>
 
-					<GlobalStyle />
-				</CharacterProvider>
-			</UserProvider>
+						<GlobalStyle />
+					</CharacterProvider>
+				</UserProvider>
+			</BattleHistoryProvider>
 		</ThemeProvider>
 	);
 }
