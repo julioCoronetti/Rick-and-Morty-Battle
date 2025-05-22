@@ -27,7 +27,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 		const storedKey = parseInt(localStorage.getItem("generationKey") || "0");
 
 		if (storedCharacters.length === 0 && storedKey === 0) {
-			localStorage.setItem("generationKey", "5");
+			localStorage.setItem("generationKey", "1");
 			setGenerationKey(1);
 		} else {
 			setCharacters(storedCharacters);
