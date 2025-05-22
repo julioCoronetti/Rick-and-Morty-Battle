@@ -7,11 +7,13 @@ import { Card } from "../../components/Card";
 import { useBattleHistory } from "../../contexts/BattleHistoryProvider";
 import { v4 as uuidv4 } from "uuid";
 import { Character } from "../../types/Character";
+import { useCharacter } from "../../contexts/CharacterProvider";
 
 export const Battle = () => {
 	const { characters } = useUser();
 	const navigate = useNavigate();
 	const { addBattle } = useBattleHistory();
+	const { generateCharacter } = useCharacter();
 
 	useEffect(() => {
 		if (characters.length === 0) {
@@ -19,13 +21,8 @@ export const Battle = () => {
 		}
 	}, [characters, navigate]);
 
-	const handleCardClick = (selectedCharacter: Character) => {
-		const possibleOpponents = characters.filter(
-			(character) => character.id !== selectedCharacter.id,
-		);
-
-		const opponent =
-			possibleOpponents[Math.floor(Math.random() * possibleOpponents.length)];
+	const handleCardClick = async (selectedCharacter: Character) => {
+		const opponent = await generateCharacter();
 
 		const battle = {
 			id: uuidv4(),

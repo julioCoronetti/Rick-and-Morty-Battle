@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import {
+	createContext,
+	ReactNode,
+	useContext,
+	useEffect,
+	useState,
+} from "react";
 import { Character } from "../types/Character";
 type Battle = {
 	id: string;
@@ -24,7 +30,14 @@ type Props = {
 };
 
 export const BattleHistoryProvider = ({ children }: Props) => {
-	const [history, setHistory] = useState<Battle[]>([]);
+	const [history, setHistory] = useState<Battle[]>(() => {
+		const stored = localStorage.getItem("battleHistory");
+		return stored ? JSON.parse(stored) : [];
+	});
+
+	useEffect(() => {
+		localStorage.setItem("battleHistory", JSON.stringify(history));
+	}, [history]);
 
 	const addBattle = (battle: Battle) => setHistory((prev) => [...prev, battle]);
 	const updateBattleResult = (id: string, result: "win" | "lose" | "draw") => {
